@@ -1,7 +1,7 @@
 # Documentation: https://docs.brew.sh/Formula-Cookbook
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-class Flow < Formula
+class Dataflow < Formula
   desc "Dataflow Programming Environment" 
   homepage "https://github.com/andrewdavidmackenzie/flow"
   url "https://github.com/andrewdavidmackenzie/flow/archive/refs/tags/v0.92.0.tar.gz"
