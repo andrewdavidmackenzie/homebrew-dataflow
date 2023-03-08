@@ -16,5 +16,7 @@ class Dataflow < Formula
     bin.install "target/release/flowrex"
     bin.install "target/release/flowsamples"
     bin.install "target/release/flowstdlib"
+    bin.install "target/flowstdlib"
+    bin.install "target/flowsamples"
   end
 end
