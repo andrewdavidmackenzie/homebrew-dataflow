@@ -10,7 +10,7 @@ class Dataflow < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "build", "--release"
+    system "cargo", "+nightly", "build", "--release"
     bin.install "target/release/flowc"
     bin.install "target/release/flowr"
     bin.install "target/release/flowrex"
