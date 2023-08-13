@@ -2,11 +2,11 @@
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Dataflow < Formula
-  desc "Dataflow Programming Environment" 
+  desc "The 'flow' dataflow programming environment" 
   homepage "https://github.com/andrewdavidmackenzie/flow"
-  url "https://github.com/andrewdavidmackenzie/flow/archive/refs/tags/v0.92.0.tar.gz"
+  url "https://github.com/andrewdavidmackenzie/flow/archive/refs/tags/v0.130.0.tar.gz"
   sha256 "e8d5d59deec98ddab995e205ee4b5fe1afc2be04bef1cc06f016676934cd0e12"
-  version "0.92.0"
+  version "0.130.0"
   depends_on "rust" => :build
 
   def install
@@ -14,9 +14,7 @@ class Dataflow < Formula
     bin.install "target/release/flowc"
     bin.install "target/release/flowr"
     bin.install "target/release/flowrex"
-    bin.install "target/release/flowsamples"
     bin.install "target/release/flowstdlib"
-    bin.install "target/flowstdlib"
-    bin.install "target/flowsamples"
+    system "flowc", "-d", "-g", "-O", "flowstdlib"
   end
 end
