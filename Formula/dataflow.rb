@@ -12,9 +12,9 @@ class Dataflow < Formula
   def install
     system "cargo", "+nightly", "build", "--release"
     bin.install "target/release/flowc"
-    bin.install "target/release/flowr"
+    bin.install "target/release/flowrcli"
+    bin.install "target/release/flowrgui"
     bin.install "target/release/flowrex"
-    bin.install "target/release/flowstdlib"
     system "flowc", "-d", "-g", "-O", "flowstdlib"
   end
 end
