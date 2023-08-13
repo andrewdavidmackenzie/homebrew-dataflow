@@ -7,14 +7,11 @@ class Dataflow < Formula
   url "https://github.com/andrewdavidmackenzie/flow/archive/refs/tags/v0.130.0.tar.gz"
   sha256 "6e745180a9015d576fb774dfb04c776958cf040809592a6b3e165836fb041d99"
   version "0.130.0"
-  depends_on "rust" => :build
+  
+  depends_on "rust" => :build # Newlines surrounding `depends_on` is required.
 
   def install
-    system "cargo", "+nightly", "build", "--release"
-    bin.install "target/release/flowc"
-    bin.install "target/release/flowrcli"
-    bin.install "target/release/flowrgui"
-    bin.install "target/release/flowrex"
+    system "cargo", "+nightly", "install"
     system "flowc", "-d", "-g", "-O", "flowstdlib"
   end
 end
