@@ -11,7 +11,7 @@ class Dataflow < Formula
   depends_on "rust" => :build # Newlines surrounding `depends_on` is required.
 
   def install
-    system "cargo" "install"
+    system "cargo", "install"
     system "flowc", "-d", "-g", "-O", "flowstdlib"
   end
 end
