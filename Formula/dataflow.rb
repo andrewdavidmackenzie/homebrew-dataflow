@@ -12,7 +12,9 @@ class Dataflow < Formula
 
   def install
     system "cargo", "install", "--path", "flowc"
-    system "cargo", "install", "--path", "flowr"
+    system "cargo", "install", "--path", "flowr" # with it's multiple flowrcli and flowrgui binaries
     system "flowc", "-d", "-g", "-O", "flowstdlib"
+    system "flowc", "flowr/src/bin/flowrcli"
+    system "flowc", "flowr/src/bin/flowrgui"
   end
 end
