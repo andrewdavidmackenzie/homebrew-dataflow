@@ -4,7 +4,7 @@
 class Dataflow < Formula
   desc "The 'flow' dataflow programming environment" 
   homepage "https://github.com/andrewdavidmackenzie/flow"
-  url "https://github.com/andrewdavidmackenzie/flow/archive/refs/tags/v0.130.0.tar.gz"
+  url "https://github.com/andrewdavidmackenzie/flow/archive/refs/tags/v0.135.0.tar.gz"
   sha256 "6e745180a9015d576fb774dfb04c776958cf040809592a6b3e165836fb041d99"
   version "0.135.0"
   
