@@ -5,7 +5,7 @@ class Dataflow < Formula
   desc "The 'flow' dataflow programming environment" 
   homepage "https://github.com/andrewdavidmackenzie/flow"
   url "https://github.com/andrewdavidmackenzie/flow/archive/refs/tags/v0.135.0.tar.gz"
-  sha256 "6e745180a9015d576fb774dfb04c776958cf040809592a6b3e165836fb041d99"
+  sha256 "05a7e7e92d5000ed48416bae212329d837038cc61136fa4661d1ac81f30e10dc"
   version "0.135.0"
   
   depends_on "rust" => :build # Newlines surrounding `depends_on` is required.
