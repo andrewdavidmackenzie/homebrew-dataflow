@@ -13,8 +13,8 @@ class Dataflow < Formula
   # See INSTALLING.md in https://github.com/andrewdavidmackenzie/flow for more details on the need for
   # nightly rust and how to ensure this can be built
   def install
-    system "cargo", "+nightly", "install", "--path", "flowc"
-    system "cargo", "+nightly", "install", "--path", "flowr" # with it's multiple flowrcli and flowrgui binaries
+    system "rustup", "run", "nightly", "cargo", "install", "--path", "flowc"
+    system "rustup", "run", "nightly", "cargo", "install", "--path", "flowr" # with it's multiple flowrcli and flowrgui binaries
     system "flowc", "-d", "-g", "-O", "flowstdlib"
     system "flowc", "flowr/src/bin/flowrcli"
     system "flowc", "flowr/src/bin/flowrgui"
