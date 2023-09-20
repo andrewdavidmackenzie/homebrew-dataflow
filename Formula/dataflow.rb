@@ -10,9 +10,11 @@ class Dataflow < Formula
   
   depends_on "rust" => :build # Newlines surrounding `depends_on` is required.
 
+  # See INSTALLING.md in https://github.com/andrewdavidmackenzie/flow for more details on the need for
+  # nightly rust and how to ensure this can be built
   def install
-    system "cargo", "install", "--path", "flowc"
-    system "cargo", "install", "--path", "flowr" # with it's multiple flowrcli and flowrgui binaries
+    system "cargo", "+nightly", "install", "--path", "flowc"
+    system "cargo", "+nightly", "install", "--path", "flowr" # with it's multiple flowrcli and flowrgui binaries
     system "flowc", "-d", "-g", "-O", "flowstdlib"
     system "flowc", "flowr/src/bin/flowrcli"
     system "flowc", "flowr/src/bin/flowrgui"
