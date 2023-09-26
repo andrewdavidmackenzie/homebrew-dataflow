@@ -13,10 +13,18 @@ class Dataflow < Formula
   # See INSTALLING.md in https://github.com/andrewdavidmackenzie/flow for more details on the need for
   # nightly rust and how to ensure this can be built
   def install
-    system "rustup", "run", "nightly", "cargo", "install", "--path", "flowc"
-    system "rustup", "run", "nightly", "cargo", "install", "--path", "flowr" # with it's multiple flowrcli and flowrgui binaries
-    system "flowc", "-d", "-g", "-O", "flowstdlib"
-    system "flowc", "flowr/src/bin/flowrcli"
-    system "flowc", "flowr/src/bin/flowrgui"
+    # Install cargo-binstall
+    curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+    
+    # binstall the flowc binaries
+    cargo binstall flowc
+    #cargo binstall flowr with it's multiple binaries: flowrcli, flowrgui and flowrex
+
+    # download the flowstdlib artifact and expand into $HOME/.flow/lib
+
+    # download the flowrcli and flowrgui contexts into $HOME/.flow/runner
+    curl -L -s https://github.com/andrewdavidmackenzie/flow/releases/download/v0.135.0/flowrcli-v0.135.0.tar.xz | tar xvz - -C $HOME/.flow/runner
+    curl -L -s https://github.com/andrewdavidmackenzie/flow/releases/download/v0.135.0/flowrgui-v0.135.0.tar.xz | tar xvz - -C $HOME/.flow/runner
+
   end
 end
