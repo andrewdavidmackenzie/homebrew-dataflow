@@ -12,7 +12,7 @@ class Dataflow < Formula
 
   def install
     # Install cargo-binstall
-    system "curl", "-L", "--proto", "'=https'", "--tlsv1.2", "-sSf", "https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh", "-o", "install-from-binstall-release.sh"
+    system "curl", "-L", "--tlsv1.2", "-sSf", "https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh", "-o", "install-from-binstall-release.sh"
     system "bash", "install-from-binstall-release.sh"
     
     # binstall the flowc binary
@@ -21,15 +21,15 @@ class Dataflow < Formula
     # cargo binstall flowr crate's multiple binaries: flowrcli, flowrgui and flowrex
 
     # download the flowstdlib artifact and expand into $HOME/.flow/lib
-    system "curl", "-L", "--proto", "'=https'", "--tlsv1.2", "-sSf", "https://github.com/andrewdavidmackenzie/flow/releases/download/v0.135.0/flowstdlib-v0.135.0.tar.xz", "-o", "flowstdlib-v0.135.0.tar.xz"
+    system "curl", "-L", "--tlsv1.2", "-sSf", "https://github.com/andrewdavidmackenzie/flow/releases/download/v0.135.0/flowstdlib-v0.135.0.tar.xz", "-o", "flowstdlib-v0.135.0.tar.xz"
     system "tar", "-xvz", "flowstdlib-v0.135.0.tar.xz", "-", "-C" "$HOME/.flow/lib"
 
     # download the flowrcli context into $HOME/.flow/runner
-    system "curl", "-L", "--proto", "'=https'", "--tlsv1.2", "-sSf", "https://github.com/andrewdavidmackenzie/flow/releases/download/v0.135.0/flowrcli-v0.135.0.tar.xz", "-o", "flowrcli-v0.135.0.tar.xz"
+    system "curl", "-L", "--tlsv1.2", "-sSf", "https://github.com/andrewdavidmackenzie/flow/releases/download/v0.135.0/flowrcli-v0.135.0.tar.xz", "-o", "flowrcli-v0.135.0.tar.xz"
     system "tar", "-xvz", "flowrcli-v0.135.0.tar.xz", "-", "-C" "$HOME/.flow/lib"
 
     # download the flowrgui context into $HOME/.flow/runner
-    system "curl", "-L", "--proto", "'=https'", "--tlsv1.2", "-sSf", "https://github.com/andrewdavidmackenzie/flow/releases/download/v0.135.0/flowrgui-v0.135.0.tar.xz", "-o", "flowrgui-v0.135.0.tar.xz"
+    system "curl", "-L", "--tlsv1.2", "-sSf", "https://github.com/andrewdavidmackenzie/flow/releases/download/v0.135.0/flowrgui-v0.135.0.tar.xz", "-o", "flowrgui-v0.135.0.tar.xz"
     system "tar", "-xvz", "flowrgui-v0.135.0.tar.xz", "-", "-C" "$HOME/.flow/lib"
 
   end
