@@ -11,16 +11,18 @@ class Dataflow < Formula
   depends_on "rust" => :build # Newlines surrounding `depends_on` is required.
 
   # See INSTALLING.md in https://github.com/andrewdavidmackenzie/flow for more details on the need for
-  # nightly rust and how to ensure this can be built
+  # nightly rust and how to ensure this can be built
   def install
     # Install cargo-binstall
     curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
     
-    # binstall the flowc binaries
+    # binstall the flowc binary
     cargo binstall flowc
-    #cargo binstall flowr with it's multiple binaries: flowrcli, flowrgui and flowrex
 
-    # download the flowstdlib artifact and expand into $HOME/.flow/lib
+    # cargo binstall flowr crate's multiple binaries: flowrcli, flowrgui and flowrex
+
+    # download the flowstdlib artifact and expand into $HOME/.flow/lib
+    curl -L -s https://github.com/andrewdavidmackenzie/flow/releases/download/v0.135.0/flowstdlib-v0.135.0.tar.xz | tar xvz - -C $HOME/.flow/lib
 
     # download the flowrcli and flowrgui contexts into $HOME/.flow/runner
     curl -L -s https://github.com/andrewdavidmackenzie/flow/releases/download/v0.135.0/flowrcli-v0.135.0.tar.xz | tar xvz - -C $HOME/.flow/runner
