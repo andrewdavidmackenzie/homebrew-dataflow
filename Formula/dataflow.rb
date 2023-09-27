@@ -23,17 +23,17 @@ class Dataflow < Formula
     # download the flowstdlib artifact and expand into $HOME/.flow/lib
     system "curl", "-L", "--tlsv1.2", "-sSf", "https://github.com/andrewdavidmackenzie/flow/releases/download/v0.135.0/flowstdlib-v0.135.0.tar.xz", "-o", "flowstdlib-v0.135.0.tar.xz"
     system "mkdir", "-p", "$HOME/.flow/runner"
-    system "tar", "-xvf", "flowstdlib-v0.135.0.tar.xz", "-C" "$HOME/.flow/runner"
+    system "tar", "-xvf", "flowstdlib-v0.135.0.tar.xz", "--directory", "$HOME/.flow/runner"
 
     # download the flowrcli context into $HOME/.flow/runner
     system "curl", "-L", "--tlsv1.2", "-sSf", "https://github.com/andrewdavidmackenzie/flow/releases/download/v0.135.0/flowrcli-v0.135.0.tar.xz", "-o", "flowrcli-v0.135.0.tar.xz"
     system "mkdir", "-p", "$HOME/.flow/runner"
-    system "tar", "-xvf", "flowrcli-v0.135.0.tar.xz", "-C", "$HOME/.flow/runner"
+    system "tar", "-xvf", "flowrcli-v0.135.0.tar.xz", "--directory", "$HOME/.flow/runner"
 
     # download the flowrgui context into $HOME/.flow/runner
     system "curl", "-L", "--tlsv1.2", "-sSf", "https://github.com/andrewdavidmackenzie/flow/releases/download/v0.135.0/flowrgui-v0.135.0.tar.xz", "-o", "flowrgui-v0.135.0.tar.xz"
     system "mkdir", "-p", "$HOME/.flow/lib"
-    system "tar", "-xvf", "flowrgui-v0.135.0.tar.xz", "-C" "$HOME/.flow/lib"
+    system "tar", "-xvf", "flowrgui-v0.135.0.tar.xz", "--directory", "$HOME/.flow/lib"
 
   end
 end
